@@ -1,5 +1,5 @@
 { "name": "wingrr",
-  "version": "0.9",
+  "version": "0.9.0",
   "description": "Node Growl notifications for windows",
   "author": "Brandon Satrom <bsatrom@gmail.com>",
   "main": "./lib/wingrr.js"
