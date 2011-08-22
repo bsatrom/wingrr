@@ -1,6 +1,11 @@
 ### wingrr Revisions
 
-0.0.9 / 2011-08-22
+0.9.1 / 2011-08-22
+==================
+
+	* Fixes to registerApplication function
+
+0.9.0 / 2011-08-22
 ==================
 
 	* Renamed growl.js to winggr.js
