@@ -1,27 +1,28 @@
-# Growl for nodejs
+# nodejs Growl notifications for Windows
 
-Growl support for Nodejs. This is essentially a port of my [Ruby Growl Library](http://github.com/visionmedia/growl).
+Growl support for Nodejs on Windows. Forked, modified for Windows and extended, with much appreciation, from TJ Holowaychuk's (tj@vision-media.ca) [node-growl library](https://github.com/visionmedia/node-growl).
+
+## Pre-requisites
+
+	- [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
+	- growlnotify command-line utility should be in your PATH
 
 ## Installation
 
   Install [npm](http://npmjs.org/) and run:
   
-      $ npm -g install growl
+      $ npm -g install wingrr
 
 ## Examples
 
 Callback functions are optional
 
-    var growl = require('growl')
-    growl.notify('You have mail!')
-    growl.notify('5 new messages', { sticky: true })
-    growl.notify('5 new emails', { title: 'Email Client', image: 'Safari', sticky: true })
-    growl.notify('Show Safari icon', { image: 'Safari' })
-    growl.notify('Show icon', { image: 'path/to/icon.icns' })
-    growl.notify('Show image', { image: 'path/to/my.image.png' })
-    growl.notify('Show png filesystem icon', { image: 'png' })
-    growl.notify('Show pdf filesystem icon', { image: 'article.pdf' })
-    growl.notify('Show pdf filesystem icon', { image: 'article.pdf' }, function(){
+    var wingrr = require('wingrr')
+    wingrr.notify('You have mail!')
+    wingrr.notify('5 new messages', { sticky: true })
+    wingrr.notify('5 new emails', { title: 'Email Client', image: './email.png', sticky: true })
+    wingrr.notify('Show image', { image: 'path/to/my.image.png' })
+    wingrr.notify('Show image', { image: 'path/to/my.image.png' }, function(){
       // ... notified
     })
 
@@ -32,25 +33,30 @@ Callback functions are optional
   - name
     - application name
   - sticky
-    - weither or not the notification should remainin until closed
-  - image
-    - Auto-detects the context:
-      - path to an icon sets --iconpath
-      - path to an image sets --image
-      - capitalized word sets --appIcon
-      - filename uses extname as --icon
-      - otherwise treated as --icon
+    - weather or not the notification should remainin until closed
+  - callback
+  	- a callback url to activate when the user clicks on the message 
+  - image  
+  	- Url or path to an image file (relative to growlnotify if path)
+
+Register a new appliation with growlnotify
+	
+	wingrr.registerApplication 'My CoolApp', 'appimg.png'
+	wingrr.notify('You have a message', { name: 'My CoolApp' })
+
+Display raw growlnotify commands on the console
+	wingrr.debug = true
       
 Fetch the current version of 'growlnotify':
 
-    growl.binVersion(function(err, version){ ... })
+    wingrr.binVersion(function(err, version){ ... })
     // => 'n.n.n'
 
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2009 TJ Holowaychuk <tj@vision-media.ca>
+Copyright (c) 2011 Brandon Satrom <bsatrom@gmail.com>, Carrot Pants Studios
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

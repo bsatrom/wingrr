@@ -1,3 +1,13 @@
+### wingrr Revisions
+
+0.0.9 / 2011-08-22
+==================
+
+	* Renamed growl.js to winggr.js
+	* Modified core functionality to support Windows-specific switches for growlnotify
+	* Added public title and debug properties, as well as a register application function that can be used to register new apps with growlnotify
+
+### Pre-Fork Revisions (as node-growl)
 
 1.1.0 / 2011-03-15 
 ==================
