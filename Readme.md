@@ -4,8 +4,8 @@ Growl support for Nodejs on Windows. Forked, modified for Windows and extended, 
 
 ## Pre-requisites
 
-	- [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
-	- growlnotify command-line utility should be in your PATH
+	* [Growl for Windows](http://www.growlforwindows.com/gfw/default.aspx)
+	* growlnotify command-line utility should be in your PATH
 
 ## Installation
 
